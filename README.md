@@ -4,8 +4,6 @@
 
 ![登录](img/登录.png)
 
-
-
 项目地址：[Github](https://github.com/silianpan/bss-web)、[国内Gitee](https://gitee.com/twofloor/bss-web)
 
 演示地址：http://silianpan.cn/bss/
@@ -28,6 +26,10 @@
 * 首页
 
   ![首页](img/首页.png)
+
+* 下级人大
+
+  ![下级人大](./img/下级人大.png)
 
 * 预算监督
 
@@ -69,7 +71,7 @@
 
   ![系统管理](img/系统管理.png)
 
-* 下级人大![下级人大](./img/下级人大.png)
+  
 
 ![技术支持](img/技术支持.png)
 
