@@ -1,0 +1,76 @@
+.preview-div {
+  float: left;
+  display: inline-block;
+  width: 70%;
+  height: 100%;
+  .no-preview {
+    margin: 0 auto;
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    color: grey;
+    font-family: '微软雅黑';
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+  }
+}
+
+.info-div {
+  display: inline-block;
+  background: rgb(247, 247, 247);
+  width: 30%;
+
+  .base-div {
+    padding:16px; 
+  }
+
+  .file-div {
+    padding:0 16px 16px 16px;
+    position: relative;
+  
+    .file-item {
+      padding: 5px 0;
+      width: 100px;
+      height: 70px;
+      border-radius: 5px;
+  
+      .file-img {
+        width: 40px;
+        height: 40px;
+        background-size: cover;
+        margin: 0 auto;
+      }
+  
+      .file-name {
+        margin: 0 auto;
+        width: 90px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 5px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  
+    .file-item:hover {
+      cursor: pointer;
+      background-color: #f1f5fa;
+    }
+  
+    .file-selected {
+      padding: 4px 0;
+      border: 1px solid #09AAFF;
+      background-color: #f1f5fa;
+    }
+  }
+
+  .advice-div {
+    padding:0 16px 16px 16px;
+    position: relative;
+  }
+  
+}

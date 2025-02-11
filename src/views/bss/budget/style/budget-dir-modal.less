@@ -1,0 +1,81 @@
+.open-enable {
+  cursor: pointer;
+}
+
+.file-item-container {
+  width: 120px;
+  height: 127px;
+  float: left;
+  text-align: center;
+  border: 1px solid #fff;
+  position: relative;
+
+  & .check-bar {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 21px;
+    width: 21px;
+    display: none;
+    cursor: pointer;
+
+    & .checked {
+      opacity: 1;
+      font-size: 19px;
+      color: #09AAFF;
+      position: absolute;
+      left: 1px;
+      filter: alpha(opacity=100);
+    }
+  }
+}
+
+.is-hover{
+  .selected;
+  .check-bar{
+    & .checked{
+      -webkit-filter: opacity(30%); /* Chrome, Safari, Opera */
+      filter: opacity(30%);
+    }
+  }
+}
+
+.selected {
+  background-color: #f1f5fa;
+  border: 1px solid #90d8ff;
+  border-radius: 5px;
+  & .check-bar {
+    display: block;
+    & .checked {
+      -webkit-filter: opacity(100%); /* Chrome, Safari, Opera */
+      filter: opacity(100%);
+    }
+  }
+}
+
+.file-large-icon {
+  position: relative;
+  margin: 9px auto 0;
+  width: 84px;
+  height: 84px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.file-small-icon2 {
+  position: relative;
+  margin: 2px 4px 0 0;
+  width: 24px;
+  height: 24px;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.file-name {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 6px 5px 5px;
+}

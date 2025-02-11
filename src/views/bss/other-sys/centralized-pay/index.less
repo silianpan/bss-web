@@ -1,0 +1,142 @@
+& .wrapperMain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  & .containerWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    overflow: auto;
+
+    & .leftWrapper {
+      width: 260px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      overflow: auto;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #ddd;
+      }
+    }
+
+    & .rightWrapper {
+      position: absolute;
+      left: 260px;
+      bottom: 0;
+      top: 0;
+      right: 0;
+      overflow: auto;
+    }
+
+    .pageContainer {
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+}
+
+.container {
+  margin: 24px;
+  position: relative;
+}
+
+.functionBar {
+  padding: 18px;
+  box-sizing: border-box;
+  min-height: 68px;
+  position: relative;
+
+  & .functionBarMain {
+    position: relative;
+
+    & .labelName {
+      line-height: 32px;
+      display: inline-block;
+    }
+  }
+
+  & .formLabel {
+    display: inline-block;
+    position: relative;
+  }
+}
+
+.leftGroup {
+  left: 0;
+  position: absolute;
+  font-size: 0;
+
+  & .formLabel {
+    margin-right: 18px;
+  }
+}
+
+.rightGroup {
+  right: 0;
+  position: absolute;
+  font-size: 0;
+
+  & .formLabel {
+    margin-left: 18px;
+  }
+}
+
+.tableContainer {
+  position: relative;
+
+  & .ivu-table-header {
+    & .ivu-table-cell {
+      font-weight: normal;
+      color: #666;
+      padding: 4px 12px;
+    }
+  }
+
+  & .ivu-table-body {
+    & .ivu-table-cell {
+      padding: 12px 18px;
+      line-height: 18px;
+    }
+  }
+
+  & .gridBtn {
+    position: relative;
+    display: inline-block;
+    padding: 0 12px;
+  }
+
+  & .mainColor {
+    color: #e64646;
+  }
+}
+
+.tab-item {
+  cursor: pointer;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  vertical-align: middle;
+  background: white;
+  border-radius: 3px 0 0 3px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.active-tab {
+  color: #e64646;
+  background: #fff2f0;
+  border-right: 2px solid #e64646;
+  transition: all 0.3s ease-in-out;
+}

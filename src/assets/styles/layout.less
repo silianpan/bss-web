@@ -1,0 +1,1146 @@
+@import '../font/iconfont.css'; //字体样式
+@import 'base.less'; //基础样式，此样式对viewUi进行了部分修正，请勿覆盖
+
+// ^\s*(?=\r?$)\n 猜一猜这个是干什么的？
+//首页主框架，请勿用于其他页面
+.warp {
+  .absoluteBox;
+  .fullScreen;
+  background: url('images/defaultBg.png') no-repeat;
+}
+
+.bottomLine:after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  background-color: #e5e5e5;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.userInfoWrap {
+  position: relative;
+  height: 36px;
+
+  & .userLabel {
+    display: inline-block;
+    margin-left: @appMargin;
+    font-size: 16px;
+    line-height: 36px;
+
+    & .links {
+      cursor: pointer;
+      transition: color 0.5s;
+
+      &:hover {
+        color: @mainColor;
+      }
+    }
+
+    & .colorLink {
+      background-color: @mainColor;
+      color: #fff;
+      line-height: 36px;
+      padding: 0 @appMargin;
+      display: inline-block;
+      border-radius: 18px;
+      cursor: pointer;
+    }
+  }
+
+  & .userButtom {
+    background-color: @mainColor;
+    border: none;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 @appMargin;
+    color: #fff;
+    border-radius: 18px;
+    outline: none;
+    cursor: pointer;
+    transition: backgroundColor 0.5s;
+
+    &:hover {
+      background-color: #333;
+    }
+  }
+}
+
+.homePage {
+  .absoluteBox;
+  .fullScreen;
+  overflow: auto;
+
+  // 用户信息区
+  & .defaultUserInfo {
+    .absoluteBox;
+    top: 44px;
+    right: @knowledgeWidth + @appMargin*3;
+  }
+
+  // 首页LOGO
+  & .defaultLogo {
+    width: 806px;
+    height: 128px;
+    position: absolute;
+    top: 160px;
+    left: 48px;
+    background: url('images/logo.png') no-repeat;
+
+    & .describeLogo {
+      position: absolute;
+      bottom: 12px;
+      left: 6px;
+      line-height: 18px;
+      font-size: @appMargin;
+      font-weight: 700;
+      color: #333;
+    }
+  }
+
+  // 快速链接
+  & .fastLinks {
+    .absoluteBox;
+    top: 380px;
+    // bottom: @bottomHeight;
+    left: @appMargin;
+    right: @knowledgeWidth + @appMargin*2;
+    background-color: #fff;
+    min-height: 800px;
+    border-radius: 8px;
+    border-top: 2px solid #db342c;
+
+    & .fastLinkMain {
+      position: relative;
+      padding: 36px 48px;
+
+      & .fastLinkSearch {
+        position: relative;
+        height: 36px;
+        margin-bottom: 48px;
+
+        & .fastSearchMain {
+          position: absolute;
+          right: 0;
+
+          & .searchCriminal .ivu-input {
+            width: 260px;
+            height: 36px;
+            border-radius: 18px;
+            background-color: #eee;
+            line-height: 36px;
+            outline: none;
+            border: none;
+            padding: 0 @appMargin;
+          }
+        }
+
+        & .currentDate {
+          line-height: 36px;
+          font-size: 18px;
+          color: #999;
+        }
+      }
+
+      & .fastLinkMainContent {
+        position: relative;
+        margin-left: -48px;
+        user-select: none;
+        font-size: 0;
+
+        & .fastItems {
+          position: relative;
+          min-width: 160px;
+          width: 25%;
+          display: inline-block;
+          margin-bottom: 32px;
+          vertical-align: top;
+
+          & .fastItemMain {
+            border: 1px solid #f6bcbc;
+            border-radius: 8px;
+            margin-left: 48px;
+            min-height: 150px;
+            position: relative;
+            padding: 0 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            background-image: linear-gradient(#fff, #fef0e8);
+            transition: all 0.5s;
+
+            & .fastItemsContent {
+              position: relative;
+              text-align: center;
+
+              & .defaultFastLinkIcon {
+                width: 64px;
+                height: 64px;
+                margin: 18px auto 0;
+                display: inline-block;
+                font-size: 48px;
+                line-height: 64px;
+                text-align: center;
+                color: @mainColor;
+                transition: color 0.5s;
+              }
+
+              & .defaultFstLinkText {
+                position: absolute;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                font-size: 20px;
+                color: @mainColor;
+                line-height: 32px;
+                transition: color 0.5s;
+              }
+            }
+          }
+
+          &:hover {
+            //   box-shadow: 0 4px 18px rgba(0, 0, 0, .4);
+            & .fastItemMain {
+              border-color: @mainColor;
+              margin-top: -12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 知识库模块
+  & .knowledgeBox {
+    .absoluteBox;
+    right: @appMargin;
+    top: @appMargin;
+    // bottom: @bottomHeight;
+    width: @knowledgeWidth;
+    background-color: #fff;
+    border-radius: 8px;
+    border-top: 2px solid #db342c;
+
+    & .knowledgeMain {
+      position: relative;
+      padding: 48px 32px;
+
+      & .knowledgeTitle {
+        position: relative;
+
+        & h2 {
+          font-size: @appMargin;
+          line-height: 32px;
+          display: inline-block;
+        }
+
+        & .showAll {
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          height: 32px;
+          line-height: 32px;
+          padding-right: @appMargin;
+          color: #999;
+          cursor: pointer;
+          transition: all 0.5s;
+
+          & .showAllIcon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -8px;
+            transition: all 0.5s;
+            background: url('images/showMore.png') no-repeat;
+          }
+
+          &:hover {
+            color: #666;
+
+            & .showAllIcon {
+              background-image: url('images/showMoreHover.png');
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.knowledgeContent {
+  overflow-x: auto;
+  height: 1025px;
+  position: relative;
+  padding-top: 18px;
+
+  & .knowledgeItems {
+    padding: @appMargin 0;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px dotted #aeaeae;
+    transition: all 0.5s;
+
+    & .knowledgeText {
+      font-size: 18px;
+      line-height: @appMargin;
+    }
+
+    & .knowledgeIcon {
+      width: @appMargin;
+      padding-right: 8px;
+      line-height: @appMargin;
+      font-size: 20px;
+      display: inline-block;
+    }
+
+    &:hover {
+      color: @mainColor;
+    }
+
+    & .checkboxWrapp {
+      position: relative;
+      width: @appMargin;
+      padding-right: 8px;
+      line-height: @appMargin;
+      display: inline-block;
+    }
+  }
+
+  & .activeKnowledgeItems {
+    & .knowledgeText {
+      color: @mainColor;
+    }
+  }
+}
+
+//首页底部信息
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: @appMargin;
+  right: @appMargin;
+  height: 66px;
+  line-height: 66px;
+  color: #999;
+  text-align: center;
+}
+
+//知识库详细页，只能作用于首页
+.knowledgeDetail {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+
+  & .knowledgeDetailTitle {
+    font-size: 28px;
+    line-height: 48px;
+    text-align: center;
+    padding: @appMargin 0;
+  }
+
+  & .knowledgeDetailContent {
+    padding: 0 18px;
+    font-size: 18px;
+
+    & p {
+      text-indent: 2em;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+// 登录页面-市区版
+.loginMain {
+  .absoluteBox;
+  .fullScreen;
+  background: url('images/loginMainBg.jpg') no-repeat;
+  background-size: 100% 100%;
+
+  & .loginLogo {
+    width: 806px;
+    height: 128px;
+    position: absolute;
+    top: 136px;
+    left: 50%;
+    margin-left: -403px;
+    background: url('images/logo.png') no-repeat;
+  }
+
+  & .loginMian {
+    width: 540px;
+    position: absolute;
+    top: 360px;
+    height: 316px;
+    left: calc(50% + 72px);
+    margin-left: -300px;
+    background-color: #fff;
+    border-radius: 8px;
+    border-top: 2px solid #db342c;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+    & .loginTitle {
+      padding: 36px 0 30px;
+      text-align: center;
+      line-height: 32px;
+      font-size: 28px;
+      font-weight: 700;
+      color: @mainColor;
+    }
+
+    & .loginLine {
+      position: relative;
+      margin-bottom: 18px;
+      font-size: 0;
+
+      & .loginLabel {
+        display: inline-block;
+        position: relative;
+        width: 180px;
+        text-align: right;
+        font-size: 18px;
+        line-height: 36px;
+        vertical-align: top;
+      }
+
+      & .loginBox {
+        position: relative;
+        vertical-align: top;
+        display: inline-block;
+
+        & .ivu-input {
+          height: 36px;
+        }
+      }
+    }
+
+    & .loginBtnBox {
+      padding: 6px 0 0;
+      position: relative;
+
+      & .loginBtn {
+        position: relative;
+        border: none;
+        height: 48px;
+        cursor: pointer;
+        background-color: @mainColor;
+        font-size: @appMargin;
+        width: 216px;
+        color: #fff;
+        border-radius: 4px;
+        outline: none;
+        transition: backgroundColor 0.5s;
+
+        &:hover {
+          background-color: #db342c;
+        }
+      }
+    }
+  }
+}
+
+// 登录页面-区县版
+.loginMainQx {
+  .absoluteBox;
+  .fullScreen;
+  width: 100%;
+  min-width: 700px;
+  height: 100%;
+  background: url('images/bgRight.png') no-repeat;
+  background-position: top left;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .loginbg {
+    width: 1086px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // background: url('images/area/542123/bg.png') no-repeat;
+    background-position: top left;
+    background-size: 90% 100%;
+    z-index: -1;
+  }
+  .loginformContainer {
+    width: 680px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .loginformWarpper {
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      border-radius: 25px;
+      padding: 20px;
+      transition: all 0.3s ease-in-out;
+      @media screen and (max-width: 1200px) {
+        transition: all 0.3s ease-in-out;
+        background-color: rgba(103, 102, 102, 0.2);
+      }
+      .logo {
+        width: 551px;
+        height: 104px;
+        margin-bottom: 71px;
+        // background: url('images/area/542123/logo.png') no-repeat;
+        // img {
+        //   width: 100%;
+        //   height: 100%;
+        // }
+      }
+      .loginform {
+        width: 550px;
+        .loginCustom {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  & .loginLogo {
+    width: 806px;
+    height: 128px;
+    position: absolute;
+    top: 136px;
+    left: 50%;
+    margin-left: -403px;
+    background: url('images/logo.png') no-repeat;
+  }
+
+  & .loginMian {
+    width: 540px;
+    position: absolute;
+    top: 360px;
+    height: 316px;
+    left: calc(50% + 72px);
+    margin-left: -300px;
+    background-color: #fff;
+    border-radius: 8px;
+    border-top: 2px solid #db342c;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+    & .loginTitle {
+      padding: 36px 0 30px;
+      text-align: center;
+      line-height: 32px;
+      font-size: 28px;
+      font-weight: 700;
+      color: @mainColor;
+    }
+
+    & .loginLine {
+      position: relative;
+      margin-bottom: 18px;
+      font-size: 0;
+
+      & .loginLabel {
+        display: inline-block;
+        position: relative;
+        width: 180px;
+        text-align: right;
+        font-size: 18px;
+        line-height: 36px;
+        vertical-align: top;
+      }
+
+      & .loginBox {
+        position: relative;
+        vertical-align: top;
+        display: inline-block;
+
+        & .ivu-input {
+          height: 36px;
+        }
+      }
+    }
+
+    & .loginBtnBox {
+      padding: 6px 0 0;
+      position: relative;
+
+      & .loginBtn {
+        position: relative;
+        border: none;
+        height: 48px;
+        cursor: pointer;
+        background-color: @mainColor;
+        font-size: @appMargin;
+        width: 216px;
+        color: #fff;
+        border-radius: 4px;
+        outline: none;
+        transition: backgroundColor 0.5s;
+
+        &:hover {
+          background-color: #db342c;
+        }
+
+        width: 597px;
+        height: 83px;
+        background: linear-gradient(180deg, #e64646, #fa6868);
+        border-radius: 42px;
+      }
+    }
+  }
+}
+
+.wrapper {
+  position: absolute;
+  .fullScreen;
+
+  & .header {
+    position: relative;
+    padding: 0 18px;
+    background: #fff url('images/sysTopBg.png') right top no-repeat;
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: @mainColor;
+    }
+
+    & .headerMain {
+      position: relative;
+      height: @headerHeight;
+    }
+
+    & .syslogo {
+      display: inline-block;
+      width: 400px;
+      height: 60px;
+      background: url('images/sysLogo.png') no-repeat;
+      margin-top: 10px;
+    }
+
+    & .userFun {
+      display: inline-block;
+      font-size: 18px;
+      vertical-align: top;
+      margin-top: 22px;
+
+      & .searchBox {
+        & .ivu-input {
+          width: 260px;
+          height: 36px;
+          border-radius: 18px;
+          background-color: #fff;
+          line-height: 36px;
+          outline: none;
+          padding: 0 @appMargin;
+        }
+      }
+    }
+  }
+
+  & .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    & .menuItem {
+      display: inline-block;
+
+      & .menuLinks {
+        position: relative;
+        display: block;
+        line-height: 80px;
+        font-size: 18px;
+        padding: 0 @appMargin;
+        color: @mainColor;
+        transition: all 0.5s;
+
+        &:hover {
+          background-color: @mainColor;
+          color: #fff;
+        }
+      }
+
+      & .actived {
+        background-color: @mainColor;
+        color: #fff;
+      }
+    }
+  }
+
+  & .main {
+    position: absolute;
+    top: @headerHeight;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    overflow: auto;
+  }
+
+  & .wrapperMain {
+    position: absolute;
+    .fullScreen;
+
+    & .containerWrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      bottom: 0;
+      overflow: auto;
+
+      & .leftWrapper {
+        width: 260px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        overflow: auto;
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 1px;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          background-color: #ddd;
+        }
+      }
+
+      & .rightWrapper {
+        position: absolute;
+        left: 260px;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        overflow: auto;
+      }
+    }
+  }
+}
+
+.container {
+  margin: @appMargin;
+  position: relative;
+}
+
+.functionBar {
+  padding: 18px;
+  box-sizing: border-box;
+  min-height: 68px;
+  position: relative;
+
+  & .functionBarMain {
+    position: relative;
+
+    & .labelName {
+      line-height: 32px;
+      display: inline-block;
+    }
+  }
+
+  & .formLabel {
+    display: inline-block;
+    position: relative;
+  }
+}
+
+.leftGroup {
+  left: 0;
+  position: absolute;
+  font-size: 0;
+
+  & .formLabel {
+    margin-right: 18px;
+  }
+}
+
+.rightGroup {
+  right: 0;
+  position: absolute;
+  font-size: 0;
+
+  & .formLabel {
+    margin-left: 18px;
+  }
+}
+
+.tableContainer {
+  position: relative;
+
+  & .ivu-table-header {
+    & .ivu-table-cell {
+      font-weight: normal;
+      color: #666;
+      padding: 4px 12px;
+    }
+  }
+
+  & .ivu-table-body {
+    & .ivu-table-cell {
+      padding: 12px 18px;
+      line-height: 18px;
+    }
+  }
+
+  & .gridBtn {
+    position: relative;
+    display: inline-block;
+    padding: 0 12px;
+  }
+
+  & .mainColor {
+    color: @mainColor;
+  }
+}
+
+.mainWrapper {
+  .absoluteBox;
+  .fullScreen;
+  overflow: auto;
+
+  & .splitContainer {
+    padding: @appMargin;
+    position: relative;
+  }
+}
+
+.typeBox {
+  padding: 18px 0 0;
+}
+
+.typeBlockList {
+  position: relative;
+  margin-bottom: 48px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-height: 60px;
+
+  & .typeBlockListTitle {
+    position: relative;
+    line-height: 32px;
+    height: 32px;
+    margin: -16px 8px 0;
+
+    & .typeBlockListText {
+      padding: 0 12px;
+      margin: 0 @appMargin;
+      display: inline-block;
+      line-height: 32px;
+      background-color: #fff;
+      position: relative;
+      z-index: 1;
+      color: @mainColor;
+    }
+  }
+
+  & .typeBlockContent {
+    padding: @appMargin;
+    font-size: 0;
+
+    & .typeBlockItem {
+      display: inline-block;
+      margin-right: @appMargin;
+      cursor: pointer;
+      line-height: 36px;
+      border-radius: 4px;
+      background-color: #f2f2f2;
+      font-size: 16px;
+      padding: 0 @appMargin;
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: @mainColor;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.wrapperList {
+  font-size: 0;
+
+  & .wrapperItem {
+    width: 20%;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: top;
+
+    & .wrapperItemMain {
+      position: relative;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      margin-left: 24px;
+      padding: 12px 0;
+      transition: all 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f5f5f5;
+
+        & .name {
+          color: @mainColor;
+        }
+      }
+
+      & .icon {
+        display: inline-block;
+
+        & .typeIcon {
+          width: 64px;
+          height: 64px;
+          margin: 6px auto 0;
+          background-repeat: no-repeat;
+          display: inline-block;
+        }
+      }
+
+      & .name {
+      }
+    }
+  }
+}
+
+.outBlock {
+  position: relative;
+  margin-top: 120px;
+  text-align: center;
+
+  & .outBlockItem {
+    display: inline-block;
+    margin: 0 24px;
+    border: 1px solid #ddd;
+    padding: 32px;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      border-color: @mainColor;
+
+      & .outBlockItemText {
+        color: #000;
+      }
+
+      & .outBlockIcon {
+        color: #000;
+      }
+    }
+
+    & .outBlockIcon {
+      font-size: 48px;
+      display: block;
+      padding: 0 0 24px;
+      line-height: 1.5em;
+      color: @mainColor;
+    }
+
+    & .outBlockItemText {
+      font-size: 18px;
+      line-height: 32px;
+      color: @mainColor;
+    }
+  }
+}
+
+.platform {
+  .absoluteBox;
+  .fullScreen;
+
+  & .secondLevelMenu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: @minMenuWidth;
+    overflow: auto;
+    background-color: #f5f5f5;
+
+    & .secondLevelMenuMain {
+      position: relative;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 1px;
+      overflow: hidden;
+      background-color: #ddd;
+    }
+
+    & .platformRouter {
+      padding: 18px 24px;
+      display: block;
+      position: relative;
+      line-height: 32px;
+      font-size: 18px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: @mainColor;
+        transition: all 0.5s;
+        z-index: 9;
+        opacity: 0;
+      }
+    }
+
+    & .platformActived {
+      background-color: #fff;
+      color: @mainColor;
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.hasMenuForm {
+  position: absolute;
+  left: @minMenuWidth;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+.platformDetail {
+  .absoluteBox;
+  .fullScreen;
+}
+
+.platformContent {
+  margin: 18px;
+  position: relative;
+}
+
+.ext-excel,
+.ext-xls,
+.ext-xlsx {
+  background: url('images/fileType/excel.png') center no-repeat;
+}
+
+.ext-dir {
+  background: url('images/fileType/dir.png') center no-repeat;
+}
+
+.ext-exe {
+  background: url('images/fileType/exe.png') center no-repeat;
+}
+
+.ext-pdf {
+  background: url('images/fileType/pdf.png') center no-repeat;
+}
+
+.ext-code,
+.ext-sql {
+  background: url('images/fileType/code.png') center no-repeat;
+}
+
+.ext-jpg {
+  background: url('images/fileType/jpg.png') center no-repeat;
+}
+
+.ext-mp3 {
+  background: url('images/fileType/mp3.png') center no-repeat;
+}
+
+.ext-png {
+  background: url('images/fileType/png.png') center no-repeat;
+}
+
+.ext-ppt,
+.ext-pptx {
+  background: url('images/fileType/ppt.png') center no-repeat;
+}
+
+.ext-txt {
+  background: url('images/fileType/txt.png') center no-repeat;
+}
+
+.ext-video {
+  background: url('images/fileType/video.png') center no-repeat;
+}
+
+.ext-undefined,
+.ext-null,
+.ext-,
+.ext-white {
+  background: url('images/fileType/white.png') center no-repeat;
+}
+
+.ext-doc,
+.ext-docx,
+.ext-word {
+  background: url('images/fileType/word.png') center no-repeat;
+}
+
+.ext-rar,
+.ext-7z,
+.ext-zip {
+  background: url('images/fileType/zip.png') center no-repeat;
+}
+
+.small-exe {
+  background: url('images/fileType/small-exe.png') center no-repeat;
+}
+.small-jpg,
+.small-png,
+.small-pic {
+  background: url('images/fileType/small-pic.png') center no-repeat;
+}
+
+.small-rar,
+.small-7z,
+.small-zip {
+  background: url('images/fileType/small-zip.png') center no-repeat;
+}
+.small-ppt,
+.small-pptx {
+  background: url('images/fileType/small-ppt.png') center no-repeat;
+}
+.small-txt {
+  background: url('images/fileType/small-txt.png') center no-repeat;
+}
+
+.small-doc,
+.small-docx,
+.small-word {
+  background: url('images/fileType/small-word.png') center no-repeat;
+}
+.small-video {
+  background: url('images/fileType/small-video.png') center no-repeat;
+}
+
+.small-excel,
+.small-xls,
+.small-xlsx {
+  background: url('images/fileType/small-excel.png') center no-repeat;
+}
+
+.small-pdf {
+  background: url('images/fileType/small-pdf.png') center no-repeat;
+}
+
+.small-code,
+.small-sql {
+  background: url('images/fileType/small-code.png') center no-repeat;
+}

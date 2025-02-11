@@ -1,0 +1,331 @@
+@import '~view-design/src/styles/index.less';
+@mainColor: #e64646;
+@css-prefix: ivu-;
+@css-prefix-iconfont : ivu-icon;
+// Color
+@primary-color : #e64646;
+@info-color : #2db7f5;
+@success-color : #19be6b;
+@processing-color : @primary-color;
+@warning-color : #ff9900;
+@error-color : #ed4014;
+@normal-color : #e6ebf1;
+@link-color : #e64646;
+@link-hover-color : tint(@link-color, 20%);
+@link-active-color : shade(@link-color, 5%);
+@selected-color : fade(@primary-color, 90%);
+@tooltip-color : #fff;
+@subsidiary-color : #808695;
+@rate-star-color : #f5a623;
+// Base
+@body-background : #fff;
+@font-family : "Helvetica Neue",
+Helvetica,
+"PingFang SC",
+"Hiragino Sans GB",
+"Microsoft YaHei",
+"微软雅黑",
+Arial,
+sans-serif;
+@code-family : Consolas,
+Menlo,
+Courier,
+monospace;
+@title-color : #17233d;
+@text-color : #000;
+@font-size-base : 16px;
+@font-size-small : 12px;
+@font-size-large : 16px;
+@line-height-base : 24px;
+@line-height-computed : floor((@font-size-base * @line-height-base));
+@border-radius-base : 4px;
+@border-radius-small : 4px;
+@cursor-disabled : not-allowed;
+// Border color
+@border-color-base : #ddd; // outside
+@border-color-split : #eee; // inside
+@border-width-base : 1px; // width of the border for a component
+@border-style-base : solid; // style of a components border
+// Background color
+@background-color-base : #f7f7f7; // base
+@background-color-select-hover: @input-disabled-bg;
+@tooltip-bg : rgba(70, 76, 91, .9);
+@head-bg : #eee;
+@table-thead-bg : #f6f6f6;
+@table-td-stripe-bg : #eee;
+@table-td-hover-bg : #f6f6f6;
+@table-td-highlight-bg : #ebf7ff;
+@menu-dark-title : #515a6e;
+@menu-dark-active-bg : #363e4f;
+@menu-dark-subsidiary-color : rgba(255, 255, 255, .7);
+@menu-dark-group-title-color : rgba(255, 255, 255, .36);
+@date-picker-cell-hover-bg : #e1f0fe;
+// Shadow
+@shadow-color : rgba(0, 0, 0, .2);
+@shadow-base : @shadow-down;
+@shadow-card : 0 1px 1px 0 rgba(0, 0, 0, .1);
+@shadow-up : 0 -1px 6px @shadow-color;
+@shadow-down : 0 1px 6px @shadow-color;
+@shadow-left : -1px 0 6px @shadow-color;
+@shadow-right : 1px 0 6px @shadow-color;
+// Button
+@btn-font-weight : normal;
+@btn-padding-base : 3px 18px;
+@btn-padding-large : 5px 24px;
+@btn-padding-small : 0 6px;
+@btn-padding-base-icon : 5px 15px 6px;
+@btn-padding-large-icon : 6px 15px 6px 15px;
+@btn-padding-small-icon : 0 6px;
+@btn-font-size : 16px;
+@btn-font-size-large : 16px;
+@btn-border-radius : 4px;
+@btn-border-radius-small: 4px;
+@btn-group-border : shade(@primary-color, 5%);
+@btn-disable-color : #c5c8ce;
+@btn-disable-bg : @background-color-base;
+@btn-disable-border : @border-color-base;
+@btn-default-color : @text-color;
+@btn-default-bg : #fff;
+@btn-default-border : @border-color-base;
+@btn-primary-color : #fff;
+@btn-primary-bg : @primary-color;
+@btn-ghost-color : @text-color;
+@btn-ghost-bg : #fff;
+@btn-ghost-border : @border-color-base;
+@btn-circle-size : 32px;
+@btn-circle-size-large : 36px;
+@btn-circle-size-small : 24px;
+// Layout and Grid
+@grid-columns : 24;
+@grid-gutter-width : 0;
+@layout-body-background : #f5f7f9;
+@layout-header-background : #515a6e;
+@layout-header-height : 64px;
+@layout-header-padding : 0 50px;
+@layout-footer-padding : 24px 50px;
+@layout-footer-background : @layout-body-background;
+@layout-sider-background : @layout-header-background;
+@layout-trigger-height : 48px;
+@layout-trigger-color : #fff;
+@layout-zero-trigger-width : 36px;
+@layout-zero-trigger-height : 42px;
+// Legend
+@legend-color : #999;
+// Input
+@input-height-base : 32px;
+@input-height-large : 42px;
+@input-height-small : 24px;
+@input-padding-horizontal : 7px;
+@input-padding-vertical-base : 4px;
+@input-padding-vertical-small: 1px;
+@input-padding-vertical-large: 6px;
+@input-placeholder-color : @btn-disable-color;
+@input-color : @text-color;
+@input-border-color : @border-color-base;
+@input-bg : #fff;
+@input-group-bg : #f8f8f9;
+@input-hover-border-color : @primary-color;
+@input-focus-border-color : @primary-color;
+@input-disabled-bg : #f3f3f3;
+// Tag
+@tag-font-size : 12px;
+// Media queries breakpoints
+// Extra small screen / phone
+@screen-xs : 480px;
+@screen-xs-min : @screen-xs;
+@screen-xs-max : (@screen-xs-min - 1);
+// Small screen / tablet
+@screen-sm : 768px;
+@screen-sm-min : @screen-sm;
+@screen-sm-max : (@screen-sm-min - 1);
+// Medium screen / desktop
+@screen-md : 992px;
+@screen-md-min : @screen-md;
+@screen-md-max : (@screen-md-min - 1);
+// Large screen / wide desktop
+@screen-lg : 1200px;
+@screen-lg-min : @screen-lg;
+@screen-lg-max : (@screen-lg-min - 1);
+// Z-index
+@zindex-spin : 8;
+@zindex-affix : 10;
+@zindex-back-top : 10;
+@zindex-select : 900;
+@zindex-modal : 1000;
+@zindex-drawer : 1000;
+@zindex-message : 1010;
+@zindex-notification : 1010;
+@zindex-tooltip : 1060;
+@zindex-transfer : 1060;
+@zindex-loading-bar : 2000;
+@zindex-spin-fullscreen : 2010;
+// Animation
+@animation-time : .3s;
+@transition-time : .2s;
+@ease-in-out : ease-in-out;
+// Slider
+@slider-color : tint(@primary-color, 20%);
+@slider-height : 4px;
+@slider-margin : 16px 0;
+@slider-button-wrap-size : 18px;
+@slider-button-wrap-offset : -4px;
+@slider-disabled-color : #ccc;
+// Avatar
+@avatar-size-base: 32px;
+@avatar-size-lg: 40px;
+@avatar-size-sm: 24px;
+@avatar-font-size-base: 18px;
+@avatar-font-size-lg: 24px;
+@avatar-font-size-sm: 16px;
+@avatar-bg: #ccc;
+@avatar-color: #fff;
+@avatar-border-radius: @border-radius-small;
+// Anchor
+@anchor-border-width: 2px;
+.ivu-input-icon{
+ font-size: 18px;
+}
+.ivu-select-item{
+ white-space:normal,
+}
+.ivu-modal-header {
+ border-bottom: none;
+ background-color: #eee;
+ border-top-left-radius: 4px;
+ border-top-right-radius: 4px;
+ & .ivu-modal-header-inner {
+  color: @mainColor;
+  line-height: 20px;
+  vertical-align: top;
+ }
+}
+.ivu-modal-footer {
+ border-top: none;
+}
+.ivu-table:before {
+ background-color: transparent;
+}
+body {
+ font-size: 16px;
+ background-color: #ededed;
+ color: #000;
+}
+bottom,
+input {
+ font-size: 16px;
+}
+input::-webkit-input-placeholder {
+ color: #666;
+ font-size: 16px;
+}
+input::-moz-input-placeholder {
+ color: #666;
+}
+input::-ms-input-placeholder {
+ color: #666;
+}
+a {
+ color: #000;
+}
+.ivu-input:hover,
+.ivu-select-selection:hover {
+ border-color: #999;
+}
+.ivu-input:focus {
+ box-shadow: none;
+ border-color: #666;
+}
+.absoluteBox {
+ position: absolute;
+}
+.fullScreen {
+ width: 100%;
+ height: 100%;
+}
+.vertical-center-modal {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ .ivu-modal {
+  top: 0;
+ }
+}
+.maginLeft18 {
+ margin-left: 18px !important;
+}
+.ivu-drawer-body {
+ padding: 0;
+}
+.ivu-tag{
+ font-size: 16px;
+}
+.noMargin{
+ margin: 0 !important;
+}
+.ivu-date-picker{
+ vertical-align: top;
+}
+.ivu-btn-icon-only{
+ vertical-align: top;
+}
+.ivu-upload{
+ vertical-align: top;
+}
+.ivu-upload-drag{
+ border: none;
+}
+[class*='loader-'] {
+ display: inline-block;
+ width: 40px;
+ height: 40px;
+ color: inherit;
+ vertical-align: middle;
+ pointer-events: none;
+}
+.loading {
+ position: absolute;
+ z-index: 9;
+ top: 50%;
+ left: 50%;
+ margin: -40px 0 0 -26px;
+ width: 40px;
+ height: 40px;
+}
+.loader-02 {
+ border: 4px solid transparent;
+ border-left-color: #ccc;
+ border-right-color: #ccc;
+ border-radius: 50%;
+ -webkit-animation: 1s loader-02 linear infinite;
+ animation: 1s loader-02 linear infinite;
+}
+@-webkit-keyframes loader-02 {
+ 0% {
+   -webkit-transform: rotate(0deg);
+   transform: rotate(0deg);
+ }
+ 100% {
+   -webkit-transform: rotate(360deg);
+   transform: rotate(360deg);
+ }
+}
+@keyframes loader-02 {
+ 0% {
+   -webkit-transform: rotate(0deg);
+   transform: rotate(0deg);
+ }
+ 100% {
+   -webkit-transform: rotate(360deg);
+   transform: rotate(360deg);
+ }
+}
+//系统框架设置
+@knowledgeWidth: 480px; // 右侧知识库定宽
+@appMargin: 24px; //统一页面边距
+@bottomHeight: 66px; //页脚高度
+@mainColor: #e64646; //页面标注色
+@headerHeight: 80px; //内页框架
+@minMenuWidth: 240px;
+@talkLeftWidth: 480px;
+@talkRightWidth: 480px;
+@talkMargin:6px;

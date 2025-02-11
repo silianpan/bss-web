@@ -1,0 +1,138 @@
+@import "./common.less";
+
+.@{custom-layout-css-prefix} {
+  .ivu-layout-header {
+    height: @custom-header-height;
+    line-height: @custom-header-height;
+  }
+
+  .ivu-menu-light {
+    background: transparent;
+  }
+
+  .ivu-menu-item {
+    font-size: .font18();
+  }
+
+  .ivu-menu {
+    font-size: .font18();
+  }
+
+  &-header {
+    width: 100%;
+    .header-bg;
+    padding: 0 16px;
+    box-shadow: 0 1px 4px rgba(0,21,41,.08);
+    transition: all .2s ease-in-out;
+    display: block;
+
+    & .ivu-menu-horizontal {
+      height: @custom-header-height!important;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 74px!important;
+    }
+
+    & .ivu-menu-light {
+      &:after {
+        background: transparent;
+      }
+    }
+
+    &-fix {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: @custom-sider-width;
+    }
+
+    &-stick {
+      left: 0;
+      z-index: 14;
+    }
+
+    &-logo {
+      display: inline-block;
+      height: @custom-header-height;
+      line-height: @custom-header-height;
+
+      &-stick {
+        width: 400px;
+        text-align: center;
+      }
+    }
+
+    // 隐藏sider
+    &-with-hide-sider {
+      left: 0;
+      transition: none;
+    }
+
+    // header 中含有menu
+    &-with-menu {
+      display: flex;
+    }
+
+    // header 中搜索样式
+    &-search {
+      outline: none;
+      border: none;
+      background: transparent;
+      color: inherit;
+    }
+
+    &-trigger {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      text-align: center;
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+
+      &-min {
+        width: auto;
+        padding: 0 12px;
+
+        i {
+          font-size: 18px;
+          vertical-align: middle;
+        }
+      }
+
+      &-in {
+        padding: 0;
+      }
+    }
+
+    &-color {
+      &-dark {
+        background: #191a23;
+      }
+
+      &-primary {
+        background: #2173dc;
+        background: linear-gradient(90deg,#1d42ab,#2173dc,#1e93ff);
+
+        .i-layout-header-search {
+          &::-moz-placeholder {
+            color: hsla(0,0%,100%,.7);
+            opacity: 1;
+          }
+
+          &:-ms-input-placeholder {
+            color: hsla(0,0%,100%,.7);
+          }
+
+          &::-webkit-input-placeholder {
+            color: hsla(0,0%,100%,.7);
+          }
+        }
+      }
+    }
+
+    &-color-primary &-search::-moz-placeholder {
+      color: hsla(0,0%,100%,.7);
+      opacity: 1;
+    }
+  }
+}

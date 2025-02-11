@@ -1,0 +1,48 @@
+.animate {
+  color: #ed4014;
+  animation: flicker 1.5s ease-out infinite alternate;
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+    font-weight: 750;
+  }
+  to {
+    opacity: 0.3;
+    font-weight: 550;
+  }
+}
+
+.no-data {
+  margin: 0 auto;
+  width: 200px;
+  height: 407px;
+  line-height: 407px;
+  color: grey;
+  font-family: '微软雅黑';
+  text-align: center;
+  vertical-align: middle;
+  font-size: 30px;
+}
+
+.click-avalible:hover {
+  color: lightseagreen !important;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.percent-div {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 407px;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #e8eaec;
+}

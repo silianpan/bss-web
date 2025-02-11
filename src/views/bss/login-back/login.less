@@ -1,0 +1,61 @@
+body{ margin: 0; padding: 0;}
+.login {
+  width: 100%;
+  top: 50%;
+  margin-top: -210px;
+  background-position: center;
+  position: relative;
+  background: #0457b7 url('~@/assets/images/login/login-bg.png') no-repeat center center;
+  &-content{
+    position: relative;
+    height: 420px;
+    width: 1200px;
+    max-width: 96%;
+    margin: 0 auto;
+    & .cnlogo{
+      display: block;
+      font-size: 48px;
+      line-height: 48px;
+      font-weight: 700;
+      text-shadow: 0 0 2px rgba(0,0,0,0.4);
+      color: #fff;
+    }
+    & .enlogo {
+      display: block;
+      font-size: 40px;
+      line-height: 20px;
+      padding-top: 12px;
+      font-weight: normal;
+      text-shadow: 0 0 2px rgba(0,0,0,0.2);
+      color: #fff;
+    }
+  }
+  &-title{
+    position: absolute;
+    top: 90px;
+    left: 0;
+    font-size:45px;
+    color:white;
+    font-weight:bold
+  }
+  &-con {
+    position: absolute;
+    top: 72px;
+    right: 60px;
+    max-width: 480px;
+    min-width: 360px;
+    .ivu-card {
+      .ivu-card-body {
+        padding: 24px;
+      }
+    }
+    .form-con {
+      padding: 10px 0 0;
+    }
+    .login-tip {
+      font-size: 0.8em;
+      text-align: center;
+      color: #f56c6c;
+    }
+  }
+}

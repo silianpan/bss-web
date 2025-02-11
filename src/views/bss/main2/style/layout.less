@@ -1,0 +1,192 @@
+@import './common.less';
+.@{custom-layout-css-prefix} {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  background: #f5f7f9;
+  &-inside {
+    min-height: 100vh;
+    transition: all 0.2s ease-in-out;
+
+    &-fix-with-sider {
+      padding-left: @custom-sider-width;
+    }
+
+    &-fix-with-hide-sider {
+      padding-left: 0;
+    }
+  }
+
+  &-content {
+    flex: auto;
+    &-fix {
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+      &-with-header {
+        top: @custom-content-main-padding-top;
+      }
+      &-with-sider {
+        left: @custom-sider-width;
+      }
+      &-with-footer {
+        bottom: @custom-footer-height;
+      }
+    }
+
+    &-main {
+      margin: 16px @custom-content-main-margin;
+    }
+
+    // &-fix-with-header {
+    //   padding-top: @custom-content-main-padding-top;
+    // }
+
+    // &-fix-with-footer{
+    //   padding-bottom: 72px;
+    // }
+  }
+}
+
+.ivu-menu-horizontal.ivu-menu-light:after {
+  background: none !important;
+}
+
+.i-layout-header-color-dark,
+.i-layout-header-color-primary {
+  color: #fff;
+}
+
+.i-layout-header-color-dark .i-layout-header-trigger:hover,
+.i-layout-header-color-primary .i-layout-header-trigger:hover {
+  background: hsla(0, 0%, 100%, 0.05);
+}
+
+.i-layout-header-color-dark .ivu-menu,
+.i-layout-header-color-primary .ivu-menu {
+  background: transparent;
+}
+
+.i-layout-header-color-dark .ivu-menu-item,
+.i-layout-header-color-primary .ivu-menu-item {
+  border-width: 3px !important;
+}
+
+.i-layout-header-color-dark .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item,
+.i-layout-header-color-dark
+  .ivu-menu-light.ivu-menu-horizontal
+  .ivu-menu-submenu,
+.i-layout-header-color-primary
+  .ivu-menu-light.ivu-menu-horizontal
+  .ivu-menu-item,
+.i-layout-header-color-primary
+  .ivu-menu-light.ivu-menu-horizontal
+  .ivu-menu-submenu {
+  color: hsla(0, 0%, 100%, 0.7);
+}
+
+.i-layout-header-color-dark
+  .ivu-menu-light.ivu-menu-horizontal
+  .ivu-menu-item-active,
+.i-layout-header-color-dark
+  .ivu-menu-light.ivu-menu-horizontal
+  .ivu-menu-item:hover,
+.i-layout-header-color-dark
+  .ivu-menu-light.ivu-menu-horizontal
+  .ivu-menu-submenu-active,
+.i-layout-header-color-dark
+  .ivu-menu-light.ivu-menu-horizontal
+  .ivu-menu-submenu:hover,
+.i-layout-header-color-primary
+  .ivu-menu-light.ivu-menu-horizontal
+  .ivu-menu-item-active,
+.i-layout-header-color-primary
+  .ivu-menu-light.ivu-menu-horizontal
+  .ivu-menu-item:hover,
+.i-layout-header-color-primary
+  .ivu-menu-light.ivu-menu-horizontal
+  .ivu-menu-submenu-active,
+.i-layout-header-color-primary
+  .ivu-menu-light.ivu-menu-horizontal
+  .ivu-menu-submenu:hover {
+  color: #fff;
+  border-bottom-color: #ff9900;
+}
+
+.i-layout-header-color-dark
+  .i-layout-header-breadcrumb
+  .ivu-breadcrumb-item-link,
+.i-layout-header-color-primary
+  .i-layout-header-breadcrumb
+  .ivu-breadcrumb-item-link {
+  color: hsla(0, 0%, 100%, 0.7);
+}
+
+.i-layout-header-color-dark
+  .i-layout-header-breadcrumb
+  > span:last-child
+  .ivu-breadcrumb-item-link,
+.i-layout-header-color-dark
+  .i-layout-header-breadcrumb
+  a.ivu-breadcrumb-item-link:hover,
+.i-layout-header-color-primary
+  .i-layout-header-breadcrumb
+  > span:last-child
+  .ivu-breadcrumb-item-link,
+.i-layout-header-color-primary
+  .i-layout-header-breadcrumb
+  a.ivu-breadcrumb-item-link:hover {
+  color: #fff;
+}
+
+.right-bottom-modal {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  .ivu-modal {
+    top: 0;
+    margin: 0px 24px;
+
+    .ivu-modal-header {
+      padding: 0px !important;
+    }
+
+    .ivu-modal-body {
+      padding: 0px !important;
+    }
+  }
+}
+
+// @height : calc(100vh - @custom-header-height - @custom-footer-height);
+.container-wrapper {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+
+  .left-wrapper {
+    height: 100%;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  .right-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    &-c {
+      overflow-y: auto;
+      position: relative;
+      height: 100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+    }
+  }
+}
